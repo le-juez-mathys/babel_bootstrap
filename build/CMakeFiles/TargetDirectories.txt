@@ -1,0 +1,3 @@
+/home/juezu/Desktop/babel_bootstrap/build/CMakeFiles/rebuild_cache.dir
+/home/juezu/Desktop/babel_bootstrap/build/CMakeFiles/edit_cache.dir
+/home/juezu/Desktop/babel_bootstrap/build/CMakeFiles/test.dir
