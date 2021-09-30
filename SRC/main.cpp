@@ -4,7 +4,7 @@
 Connection::Connection() : QWidget()
 {
     Connection::bouton_connection();
-    Connection::bouton_quite();
+    Connection::for_Quite();
     Connection::print_text("PANNEAU DE CONNECTION", "background-color: green", 12, 1920/2-110, 375);
 
 
@@ -15,6 +15,12 @@ Connection::~Connection()
 
 }
 
+/*void Connection::open_window()
+{
+    Connection * discord = new Connection;
+    discord->show();
+}
+*/
 void Connection::bouton_connection()
 {
     set_connection = new QPushButton("CONNECTION", this);
@@ -22,9 +28,11 @@ void Connection::bouton_connection()
     set_connection -> setCursor(Qt::PointingHandCursor);
     set_connection -> setStyleSheet("background-color: grey");
     set_connection -> move(1920/2, 400);
+    //connect(this->interface.pushButton,SIGNAL(clicked()),this,SLOT(open_window()));
+
 }
 
-void Connection::bouton_quite()
+void Connection::for_Quite()
 {
     set_connection = new QPushButton("QUITTER", this);
     set_connection -> setFont(QFont("Comic Sans MS", 16));

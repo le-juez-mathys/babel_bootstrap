@@ -1,13 +1,20 @@
 /home/juezu/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - Unix Makefiles" /home/juezu/Desktop/babel_bootstrap
-CMake Error at CMakeLists.txt:6 (include):
-  include could not find requested file:
+-- Conan: Adjusting output directories
+-- Conan: Using cmake global configuration
+-- Conan: Adjusting default RPATHs Conan policies
+-- Conan: Adjusting language standard
+-- Current conanbuildinfo.cmake directory: /home/juezu/Desktop/babel_bootstrap/cmake-build-debug
+-- WARN: conaninfo.txt not found
+-- WARN: CONAN_COMPILER variable not set, please make sure yourself that your compiler and version matches your declared settings
+-- Configuring done
+CMake Warning (dev) in CMakeLists.txt:
+  AUTOGEN: No valid Qt version found for target test.  AUTOMOC and AUTOUIC
+  disabled.  Consider adding:
 
-    /home/juezu/Desktop/babel_bootstrap/cmake-build-debug/conanbuildinfo.cmake
+    find_package(Qt<QTVERSION> COMPONENTS Widgets)
 
+  to your CMakeLists.txt file.
+This warning is for project developers.  Use -Wno-dev to suppress it.
 
-CMake Error at CMakeLists.txt:7 (conan_basic_setup):
-  Unknown CMake command "conan_basic_setup".
-
-
--- Configuring incomplete, errors occurred!
-See also "/home/juezu/Desktop/babel_bootstrap/cmake-build-debug/CMakeFiles/CMakeOutput.log".
+-- Generating done
+-- Build files have been written to: /home/juezu/Desktop/babel_bootstrap/cmake-build-debug
