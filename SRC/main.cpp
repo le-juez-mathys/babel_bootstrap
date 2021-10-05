@@ -1,5 +1,6 @@
 
 #include "QTCLASS.hpp"
+#include "Second_Windows.hpp"
 
 Connection::Connection() : QWidget()
 {
@@ -7,49 +8,55 @@ Connection::Connection() : QWidget()
     Connection::for_Quite();
     Connection::print_text("PANNEAU DE CONNECTION", "background-color: green", 12, 1920/2-110, 375);
 
-
 }
 
 Connection::~Connection()
 {
-
+     delete _bConnec;
+     delete _bQuite;
+     delete _tInfo;
 }
 
-/*void Connection::open_window()
-{
-    Connection * discord = new Connection;
-    discord->show();
-}
-*/
+
 void Connection::bouton_connection()
 {
-    set_connection = new QPushButton("CONNECTION", this);
-    set_connection -> setFont(QFont("Comic Sans MS", 16));
-    set_connection -> setCursor(Qt::PointingHandCursor);
-    set_connection -> setStyleSheet("background-color: grey");
-    set_connection -> move(1920/2, 400);
-    //connect(this->interface.pushButton,SIGNAL(clicked()),this,SLOT(open_window()));
+    _bConnec = new QPushButton("CONNECTION", this);
+    _bConnec -> setFont(QFont("Comic Sans MS", 16));
+    _bConnec -> setCursor(Qt::PointingHandCursor);
+    _bConnec -> setStyleSheet("background-color: grey");
+    _bConnec -> move(1920/2, 400);
+    Seconde_window window1;
+    window1.exec();git
 
 }
 
 void Connection::for_Quite()
 {
-    set_connection = new QPushButton("QUITTER", this);
-    set_connection -> setFont(QFont("Comic Sans MS", 16));
-    set_connection -> setCursor(Qt::PointingHandCursor);
-    set_connection -> setStyleSheet("background-color: grey");
-    set_connection -> move(1920/2-130, 400);
-    QObject::connect(set_connection, SIGNAL(clicked()), qApp, SLOT(quit()));
+    _bQuite = new QPushButton("QUITTER", this);
+    _bQuite -> setFont(QFont("Comic Sans MS", 16));
+    _bQuite -> setCursor(Qt::PointingHandCursor);
+    _bQuite -> setStyleSheet("background-color: grey");
+    _bQuite -> move(1920/2-130, 400);
+    QObject::connect(_bQuite, SIGNAL(clicked()), qApp, SLOT(quit()));
 }
 
 void Connection::print_text(const QString & text_for_print, const QString & color_for_text, int size, int posX, int posY)
 {
-    set_info = new QLabel(this);
-    set_info -> setText(text_for_print);
-    set_info -> setFont(QFont("Comic Sans MS", size));
-    set_info -> setStyleSheet(color_for_text);
-    set_info -> move(posX, posY);
+    _tInfo = new QLabel(this);
+    _tInfo -> setText(text_for_print);
+    _tInfo -> setFont(QFont("Comic Sans MS", size));
+    _tInfo -> setStyleSheet(color_for_text);
+    _tInfo -> move(posX, posY);
 }
+
+void Connection::open_Window(int argc, char **argv)
+{
+    QApplication app(argc, argv);
+    Seconde_window window1;
+    window1.show();
+    this->hide();
+}
+
 
 int main(int argc, char **argv)
 {
